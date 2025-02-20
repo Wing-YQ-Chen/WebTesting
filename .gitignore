@@ -1,0 +1,33 @@
+*
+
+!/JKBD_script
+!/JKBD_script/Pages
+!/NBS_script
+!/NBS_script/Pages
+!/common/poium_driver
+!/common/web_ui_driver
+!/Input
+!/common
+!/common/history
+!/Input/VBA_tools
+!/Input/VBA_tools/LAS td gentor
+!/Input/VBA_tools/LAS td gentor/Test_plans
+!/Swag_Labs_script
+!/Swag_Labs_script/Pages
+!/CoffeeScript
+!/CoffeeScript/Pages
+!/DemoScript
+!/DemoScript/Pages
+
+
+!*.feature
+!*.xls*
+!*.py
+!*.bat
+!.gitignore
+!.gitkeep
+!requirements.txt
+!*.yml
+!lunch_uiauto.cmd
+!Jenkinsfile
+!Azure_release_pipline.json
