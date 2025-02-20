@@ -19,7 +19,7 @@
 !/DemoScript
 !/DemoScript/Pages
 
-
+!Readme.md
 !*.feature
 !*.xls*
 !*.py
