@@ -55,7 +55,7 @@ class DemoPage(WebBasicPage):
 
     def input_demo_page(self, input_data):
         input_value = f'Wing testing {input_data}'
-        self.webdriver.__call__(**self.none_elm)
+        self.webdriver(**self.none_elm)
         self.webdriver(**self.Text_Input_Field).send_keys(input_value)
         self.webdriver(**self.Textarea).send_keys(input_value)
         self.webdriver(**self.PreFilled_Text_Field).send_keys(input_value)
