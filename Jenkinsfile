@@ -5,7 +5,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				bat """
-				echo "Build"
+				mvn clean validate test-compile
                 """
 
             }
@@ -15,7 +15,7 @@ pipeline {
 		stage('Run Testing') {
 			steps {
 				bat """
-				echo "Run Testing"
+				mvn test
 				"""
 			}
 		}

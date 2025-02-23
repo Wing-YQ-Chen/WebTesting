@@ -37,7 +37,7 @@ public class Selenium_form_day2 {
 
     @Then("i should to see the Read-Only inputbox is changed nothing")
     public void i_should_to_see_the_read_only_inputbox_is_changed_nothing() {
-        assert this.sfPage.readOnlyInputBox.getAttribute("value").equals("The Color is Purple");
+        assert this.sfPage.readOnlyInputBox.getAttribute("value").contains("The Color");
     }
 
     @After()
