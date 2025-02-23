@@ -1,15 +1,23 @@
 package org.Testing.Web.Steps;
 
-import io.cucumber.java.After;
+import io.cucumber.java.*;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.Testing.Web.Pages.SeleniumFromPage;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Selenium_form_day2 {
 
     SeleniumFromPage sfPage;
+
+    private Scenario scenario;
+
+    @Before
+    public void beforeScenario(Scenario scenario) {
+        this.scenario = scenario;
+    }
 
     @Given("i am on the selenium form page")
     public void i_am_on_the_selenium_form_page() {
@@ -27,6 +35,10 @@ public class Selenium_form_day2 {
 
     @Then("i should to see the inputbox is filled {string}")
     public void i_should_to_see_the_inputbox_is_filled(String string) {
+
+        TakesScreenshot ts = (TakesScreenshot) this.sfPage.driver;
+        this.scenario.attach(ts.getScreenshotAs(org.openqa.selenium.OutputType.BYTES), "image/png", "screenshot");
+
         assert this.sfPage.TextareaInputBox.getAttribute("value").equals(string);
     }
 
@@ -37,10 +49,14 @@ public class Selenium_form_day2 {
 
     @Then("i should to see the Read-Only inputbox is changed nothing")
     public void i_should_to_see_the_read_only_inputbox_is_changed_nothing() {
+
+        TakesScreenshot ts = (TakesScreenshot) this.sfPage.driver;
+        this.scenario.attach(ts.getScreenshotAs(org.openqa.selenium.OutputType.BYTES), "image/png", "screenshot");
+
         assert this.sfPage.readOnlyInputBox.getAttribute("value").contains("The Color");
     }
 
-    @After()
+    @After
     public void quit() {
         this.sfPage.driver.quit();
     }
