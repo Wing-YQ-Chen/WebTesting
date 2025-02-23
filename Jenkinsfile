@@ -20,7 +20,7 @@ pipeline {
 			}
 			post {
 				always {
-					archiveArtifacts artifacts: 'reports/cucumber-reports.html', allowEmptyArchive: true
+					archiveArtifacts artifacts: 'reports/*', allowEmptyArchive: true
 				}
 			}
 		}
