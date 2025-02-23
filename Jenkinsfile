@@ -18,11 +18,12 @@ pipeline {
 				mvn test
 				"""
 			}
-		}
-		post {
-			always {
-				archiveArtifacts artifacts: 'reports/cucumber-reports.html', allowEmptyArchive: true
+			post {
+				always {
+					archiveArtifacts artifacts: 'reports/cucumber-reports.html', allowEmptyArchive: true
 				}
 			}
+		}
+
     }
 }
