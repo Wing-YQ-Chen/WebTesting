@@ -19,5 +19,10 @@ pipeline {
 				"""
 			}
 		}
+		post {
+			always {
+				archiveArtifacts artifacts: 'reports/cucumber-reports.html', allowEmptyArchive: true
+				}
+			}
     }
 }
