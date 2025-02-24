@@ -15,7 +15,8 @@ def setup_logging(log_dir_path: str = './Logs', log_name='', level: int = loggin
     formatter = logging.Formatter('%(asctime)s %(threadName)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s')
     ts = time.strftime('%Y%m%d%H%M%S', time.localtime()).__str__()
     file_name = "{} {} {}.log".format(ts, log_name if log_name else current_thread().name, os.getlogin())
-    fh = logging.FileHandler(os.path.join(log_dir_path, file_name.__str__()), encoding="utf-8")
+    log_path = os.path.join(log_dir_path, file_name.__str__())
+    fh = logging.FileHandler(log_path, encoding="utf-8")
     fh.setFormatter(formatter)
 
     stream_handle = logging.StreamHandler()
@@ -23,7 +24,7 @@ def setup_logging(log_dir_path: str = './Logs', log_name='', level: int = loggin
 
     loger.addHandler(fh)
     loger.addHandler(stream_handle)
-    return loger
+    return loger, log_path
 
 
 def setup_loguru(log_dir_path, level="DEBUG"):
