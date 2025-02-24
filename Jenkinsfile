@@ -8,7 +8,7 @@ pipeline {
 				echo "Building"
 				rmdir /s /q "Execution"
                 python -m venv venv
-                call venv\\Scripts\\activate。
+                call venv\\Scripts\\activate
                 pip list
                 pip install -r requirements.txt.txt -i "https://mirrors.aliyun.com/pypi/simple/"
                 pip list
