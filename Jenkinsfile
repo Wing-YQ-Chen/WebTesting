@@ -6,13 +6,11 @@ pipeline {
 			steps {
 				bat """
 				echo "Building"
-				rmdir /s /q "Execution"
                 python -m venv venv
                 call venv\\Scripts\\activate
                 pip list
                 pip install -r requirements.txt.txt -i "https://mirrors.aliyun.com/pypi/simple/"
                 pip list
-                pyinstaller -p . -F "DemoScript\\main.py" -n "main.exe" --distpath "Execution\\Run" --workpath "Temp\\Build"
                 """
 
             }
@@ -23,13 +21,13 @@ pipeline {
 			steps {
 				bat """
 				echo "Run Testing"
-				cd Execution\\Run
-				main.exe
+                call venv\\Scripts\\activate
+				python "script\\main.py"
 				"""
 			}
 			post {
 				always {
-					archiveArtifacts artifacts: 'Execution\\**', allowEmptyArchive: true
+					archiveArtifacts artifacts: 'Reports/**', allowEmptyArchive: true
 				}
 			}
 		}
