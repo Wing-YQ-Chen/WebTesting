@@ -1,6 +1,8 @@
 import pytest
 import threading
-
+import sys, os
+sys.path.append(os.path.abspath('.'))
+print(sys.path)
 from common.openpyxl_common import *
 
 
