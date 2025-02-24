@@ -22,7 +22,8 @@ pipeline {
 				bat """
 				echo "Run Testing"
                 call venv\\Scripts\\activate
-				python "script\\main.py"
+                cd script
+				python main.py
 				"""
 			}
 			post {
