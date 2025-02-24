@@ -12,7 +12,7 @@ from main import input_datas, report_folder, mark_report
 
 @pytest.mark.parametrize("input_data", input_datas)
 def test_demo(input_data):
-    time.sleep(random.randint(0, 5))  # 暂时解决方案：避免测试用例同时运行导致的问题
+    time.sleep(random.randint(0, 5))  # 临时解决方案：避免测试用例同时运行导致的问题
     case = input_data['case no.'].__str__()
     data = input_data['data'].__str__()
     log_dir_path = os.path.join(report_folder, 'log')
@@ -39,4 +39,4 @@ def test_demo(input_data):
     mark_report(case,
                 status,
                 f'=HYPERLINK(\"{os.path.abspath(screen_dir_path)}\", "Open screen folder")',
-                f'=HYPERLINK(\"{os.path.abspath(log_path)}\", "Open screen folder")')
+                f'=HYPERLINK(\"{os.path.abspath(log_path)}\", "Open log file")')
