@@ -4,13 +4,15 @@ from Common.log import setup_logging
 
 class MenuPage(WebBasicPage):
     Espresso_pd = {ElmWith.XPATH: '//h4[text()="Espresso "]/..//div', ElmWith.BIZ_NAME: 'Espresso'}
-    Espresso_Macchiato_pd = {ElmWith.XPATH: '//h4[text()="Espresso Macchiato "]/..//div', ElmWith.BIZ_NAME: 'Espresso Macchiato'}
+    Espresso_Macchiato_pd = {ElmWith.XPATH: '//h4[text()="Espresso Macchiato "]/..//div',
+                             ElmWith.BIZ_NAME: 'Espresso Macchiato'}
     Cappuccino_pd = {ElmWith.XPATH: '//h4[text()="Cappuccino "]/..//div', ElmWith.BIZ_NAME: 'Cappuccino'}
     Mocha_pd = {ElmWith.XPATH: '//h4[text()="Mocha "]/..//div', ElmWith.BIZ_NAME: 'Mocha'}
     Flat_White_pd = {ElmWith.XPATH: '//h4[text()="Flat White "]/..//div', ElmWith.BIZ_NAME: 'Flat White'}
     Americano_pd = {ElmWith.XPATH: '//h4[text()="Americano "]/..//div', ElmWith.BIZ_NAME: 'Americano'}
     Cafe_Latte_pd = {ElmWith.XPATH: '//h4[text()="Cafe Latte "]/..//div', ElmWith.BIZ_NAME: 'Cafe Latte'}
-    Espresso_Con_Panna_pd = {ElmWith.XPATH: '//h4[text()="Espresso Con Panna "]/..//div', ElmWith.BIZ_NAME: 'Espresso Con Panna'}
+    Espresso_Con_Panna_pd = {ElmWith.XPATH: '//h4[text()="Espresso Con Panna "]/..//div',
+                             ElmWith.BIZ_NAME: 'Espresso Con Panna'}
     Cafe_Breve_pd = {ElmWith.XPATH: '//h4[text()="Cafe Breve "]/..//div', ElmWith.BIZ_NAME: 'Cafe Breve'}
     menu_tab_btn = {ElmWith.XPATH: '//*[contains(text(), "menu")]', ElmWith.BIZ_NAME: 'menu tab btn'}
     cart_tab_btn = {ElmWith.XPATH: '//*[contains(text(), "cart (")]', ElmWith.BIZ_NAME: 'cart tab btn'}

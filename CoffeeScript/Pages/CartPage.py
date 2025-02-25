@@ -14,7 +14,8 @@ class CartPage(WebBasicPage):
         cart_table = []
         for row_no in range(1, self.webdriver.find_elements(
                 ElmWith.XPATH, r'//div[@class="list"]/div/ul/li[@class="list-item"]', 'rows_elm').__len__()):
-            row_elms = self.webdriver.find_elements(ElmWith.XPATH, f'//div[@class="list"]/div/ul/li[@class="list-item"][{row_no}]/div')
+            row_elms = self.webdriver.find_elements(ElmWith.XPATH,
+                                                    f'//div[@class="list"]/div/ul/li[@class="list-item"][{row_no}]/div')
             cart_table.append([row_elms[0].text, row_elms[1].text, row_elms[2].text])
         return self.webdriver(**self.total_btn).text
 
