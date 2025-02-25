@@ -1,7 +1,3 @@
-from Common.openpyxl_common import *
-from Common.utils import *
-from Common.log import setup_logging
-from CoffeeScript.script import OrderScript
 import copy
 import os.path
 import queue
@@ -11,6 +7,13 @@ import glob
 import sys
 import multiprocessing
 import threading
+# 添加 common 模块所在的路径到 sys.path，否则pytest在终端运行时找不到common模块
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from Common.openpyxl_common import *
+from Common.utils import *
+from Common.log import setup_logging
+from CoffeeScript.script import OrderScript
+
 
 
 class Main:
