@@ -9,7 +9,7 @@ pipeline {
                 python -m venv venv
                 call venv\\Scripts\\activate
                 pip list
-                pip install -r requirements.txt.txt -i "https://mirrors.aliyun.com/pypi/simple/"
+                pip install -r requirements.txt -i "https://mirrors.aliyun.com/pypi/simple/"
                 pip list
                 """
 
