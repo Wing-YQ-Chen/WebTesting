@@ -21,6 +21,7 @@ pipeline {
 			steps {
 				bat """
 				echo "Run Testing"
+				rmdir /s /q "Reports"
                 call venv\\Scripts\\activate
                 cd CoffeeScript
 				python main.py
