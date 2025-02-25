@@ -1,0 +1,11 @@
+2025-02-26 00:32:59,934 MainThread coffee_main.py[line:31] INFO log path: D:\Jobs\Python_projects\WebTesting\Reports\Coffee_Demo\Logs
+2025-02-26 00:32:59,935 MainThread coffee_main.py[line:32] INFO Runner: 13059
+2025-02-26 00:32:59,935 MainThread coffee_main.py[line:38] INFO ================== Finding input file. ==================
+2025-02-26 00:32:59,935 MainThread coffee_main.py[line:44] INFO Got the input file from below path
+D:\Jobs\Python_projects\WebTesting\Input\Coffee_input.xlsx
+2025-02-26 00:32:59,935 MainThread coffee_main.py[line:46] INFO ================== Reading input file ==================
+2025-02-26 00:32:59,951 MainThread coffee_main.py[line:58] INFO ================== Creating output files ==================
+2025-02-26 00:32:59,971 MainThread coffee_main.py[line:64] INFO ================== Creating Multi Threading ==================
+2025-02-26 00:34:17,562 Thread-2 (execute) coffee_main.py[line:85] INFO ========================== END ==========================
+2025-02-26 00:35:12,320 Thread-1 (execute) coffee_main.py[line:85] INFO ========================== END ==========================
+2025-02-26 00:35:12,321 MainThread coffee_main.py[line:76] INFO ========================== All cases execution done ==========================

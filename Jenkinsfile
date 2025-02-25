@@ -2,7 +2,7 @@ pipeline {
 	agent any
     stages {
 
-        stage('Build') {
+		stage('Build') {
 			steps {
 				bat """
 				echo "Building"
@@ -22,7 +22,7 @@ pipeline {
 				bat """
 				echo "Run Testing"
                 call venv\\Scripts\\activate
-                cd script
+                cd CoffeeScript
 				python main.py
 				"""
 			}

@@ -4,14 +4,14 @@
 !/JKBD_script/Pages
 !/NBS_script
 !/NBS_script/Pages
-!/common/poium_driver
-!/common/web_ui_driver
-!/input
-!/common
-!/common/history
-!/input/VBA_tools
-!/input/VBA_tools/LAS td gentor
-!/input/VBA_tools/LAS td gentor/Test_plans
+!/Common/poium_driver
+!/Common/web_ui_driver
+!/Input
+!/Common
+!/Common/history
+!/Input/VBA_tools
+!/Input/VBA_tools/LAS td gentor
+!/Input/VBA_tools/LAS td gentor/Test_plans
 !/Swag_Labs_script
 !/Swag_Labs_script/Pages
 !/CoffeeScript

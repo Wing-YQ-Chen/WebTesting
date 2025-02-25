@@ -1,31 +1,29 @@
 from openpyxl.worksheet.worksheet import *
 from openpyxl.cell.cell import *
 from openpyxl.styles import *
-from common.utils import *
+from Common.utils import *
 import openpyxl
 import os
 import queue
 import copy
 
 
-def extract_input_data(input_file_path: str, header_row: int = 1, content_start_row: int = 2) -> list:
+def extract_input_data(input_file_path: str, header_row: int = 1, content_start_row: int = 2) -> queue.Queue:
     input_wk = openpyxl.load_workbook(input_file_path, True)
     input_ws = input_wk.worksheets[0]
 
     input_header = input_ws[f"A{header_row}":input_ws.cell(1, input_ws.max_column).column_letter + "1"]
     input_datas = input_ws[f"A{content_start_row}":input_ws.cell(1, input_ws.max_column).column_letter + input_ws.max_row.__str__()]
 
-    # input_table_q = queue.Queue()
-    input_table = []
+    input_table_q = queue.Queue()
     input_case = {}
     for r in range(input_datas.__len__()):
         for c in range(input_header[0].__len__()):
             input_case[input_header[0][c].value.__str__().strip()] = input_datas[r][c].value
-        # input_table_q.put(copy.copy(input_case))
-        input_table.append(input_case)
+        input_table_q.put(copy.copy(input_case))
         input_case = {}
     input_wk.close()
-    return input_table
+    return input_table_q
 
 
 def openpyxl_merge_cell(sheet_object: Worksheet, start_cell: Cell, resize_y: int = 0, resize_x: int = 0):
